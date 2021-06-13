@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text.Json.Serialization;
 using Travel.WebApi.DataAccess.Extensions;
 
 namespace Travel.WebApi.DataAccess.Models
@@ -11,6 +12,7 @@ namespace Travel.WebApi.DataAccess.Models
             Places = new HashSet<Places>();
         }
         public string Username { get; set; }
+        [JsonIgnore]
         public string Password { get; set; }
         public string Email { get; set; }
         public string FirstName { get; set; }

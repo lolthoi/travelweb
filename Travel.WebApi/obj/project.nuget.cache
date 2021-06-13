@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "LHZoUfDEOrLxVHgxBJ1ZINqquXfBZRBdoxqZvIlWi9vkr0Zh1k+wQ4oEaPKeKsqkkpoXICXgp6p74JmUaUtNwQ==",
+  "dgSpecHash": "SaFuEUF75J7CjcWFtJj51/eiE+42waadx2S3VI4/pX418EBHrG/bBYM1dsJZkzGUQNOlGVnmIZvJrXGAnUq3/A==",
   "success": true,
   "projectFilePath": "D:\\DEV\\TravelWeb\\Travel.WebApi\\Travel.WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\bayer\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.16\\microsoft.aspnetcore.authentication.jwtbearer.3.1.16.nupkg.sha512",
     "C:\\Users\\bayer\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\bayer\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
     "C:\\Users\\bayer\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\3.1.0\\microsoft.aspnetcore.razor.language.3.1.0.nupkg.sha512",

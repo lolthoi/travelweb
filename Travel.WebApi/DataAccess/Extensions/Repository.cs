@@ -16,7 +16,6 @@ namespace Travel.WebApi.DataAccess.Extensions
     {
         private readonly TravelContext context;
         private DbSet<T> entities;
-        string errorMessage = string.Empty;
 
         public Repository(TravelContext context)
         {
@@ -32,11 +31,6 @@ namespace Travel.WebApi.DataAccess.Extensions
         {
             return entities.FirstOrDefault(s => s.Id == id && !s.DeletedDate.HasValue);
         }
-
-        //public IEnumerable<T> Query(Expression<Func<T, bool>> query)
-        //{
-        //    return entities.Where(query);
-        //}
 
         public void Insert(T entity)
         {

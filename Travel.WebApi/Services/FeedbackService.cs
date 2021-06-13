@@ -24,7 +24,7 @@ namespace Travel.WebApi.Services
         }
         public List<FeedbackClient> GetAll(int PId)
         {
-            var ListFeedback = _feedbackRepository.GetAll().Where(x => x.PlaceId == PId && !x.DeletedDate.HasValue).ToList();
+            var ListFeedback = _feedbackRepository.GetAll().Where(x => x.PlaceId == PId).ToList();
             if (ListFeedback.Count == 0)
                 throw new Exception("There is no feedback for this place");
             var result = ListFeedback.Select(x => new FeedbackClient

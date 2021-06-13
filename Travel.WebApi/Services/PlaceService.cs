@@ -8,12 +8,11 @@ using Travel.WebApi.ClientSide.Models;
 using Travel.WebApi.DataAccess.Extensions;
 using Travel.WebApi.DataAccess.Models;
 
-namespace BusinessLogic.Services
+namespace Travel.WebApi.Services
 {
     public interface IPlaceService
     {
         List<PlaceClient> GetAll(string searchText);
-        //List<Place> Search(string search_Key);
         PlaceClient GetPlaceById(int place_Id);
         bool Create([FromForm] PlaceClient model);
         bool Update([FromForm] PlaceClient model);
@@ -85,7 +84,7 @@ namespace BusinessLogic.Services
                     string fileName = string.Concat(Path.GetFileNameWithoutExtension(img.FileName),
                                       DateTime.UtcNow.ToString("yyyyMMddHHmmssfff"),
                                       Path.GetExtension(img.FileName));
-                    using (FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + fileName))
+                    using (FileStream fileStream = File.Create(_environment.WebRootPath + "\\Upload\\" + fileName))
                     {
                         img.CopyTo(fileStream);
                         fileStream.Flush();
@@ -132,7 +131,7 @@ namespace BusinessLogic.Services
                         string fileName = string.Concat(Path.GetFileNameWithoutExtension(img.FileName),
                                           DateTime.UtcNow.ToString("yyyyMMddHHmmssfff"),
                                           Path.GetExtension(img.FileName));
-                        using (FileStream fileStream = System.IO.File.Create(_environment.WebRootPath + "\\Upload\\" + fileName))
+                        using (FileStream fileStream = File.Create(_environment.WebRootPath + "\\Upload\\" + fileName))
                         {
                             img.CopyTo(fileStream);
                             fileStream.Flush();

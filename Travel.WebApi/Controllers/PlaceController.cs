@@ -1,4 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Travel.WebApi.ClientSide.Models;
+using Travel.WebApi.Services;
 
 namespace Travel.WebApi.Controllers
 {
@@ -6,47 +10,41 @@ namespace Travel.WebApi.Controllers
     [ApiController]
     public class PlaceController : ControllerBase
     {
-        //private readonly IPlaceService _placeService;
+        private readonly IPlaceService _placeService;
 
-        //public PlaceController(IPlaceService placeService)
-        //{
-        //    _placeService = placeService;
-        //}
+        public PlaceController(IPlaceService placeService)
+        {
+            _placeService = placeService;
+        }
 
-        //[HttpGet]
-        //public ActionResult<List<PlaceClient>> GetAllPlace()
-        //{
-        //    return _placeService.GetAll();
-        //}
+        [HttpGet]
+        public ActionResult<List<PlaceClient>> GetAllPlace([FromQuery] string searchText)
+        {
+            return _placeService.GetAll(searchText);
+        }
 
-        //[HttpGet("{id}")]
-        //public ActionResult<PlaceClient> GetPlaceById(int id)
-        //{
-        //    return _placeService.GetPlaceById(id);
-        //}
+        [HttpGet("{id:int}")]
+        public ActionResult<PlaceClient> GetPlaceById(int id)
+        {
+            return _placeService.GetPlaceById(id);
+        }
 
-        //[HttpGet("search/{key}")]
-        //public ActionResult<List<PlaceClient>> SearchPlace(string key)
-        //{
-        //    return _placeService.Search(key);
-        //}
+        [HttpPut]
+        public async Task<bool> PutPlace([FromForm] PlaceClient model)
+        {
+            return _placeService.Update(model);
+        }
 
-        //[HttpPut]
-        //public async Task<bool> PutPlace([FromForm] PlaceClient model)
-        //{
-        //    return _placeService.Update(model);
-        //}
+        [HttpPost]
+        public async Task<bool> PostPlace([FromForm] PlaceClient model)
+        {
+            return _placeService.Create(model);
+        }
 
-        //[HttpPost]
-        //public async Task<bool> PostPlace([FromForm] PlaceClient model)
-        //{
-        //    return _placeService.Create(model);
-        //}
-
-        //[HttpDelete("{id}")]
-        //public ActionResult<bool> DeletePlace(int id)
-        //{
-        //    return _placeService.Delete(id);
-        //}
+        [HttpDelete("{id:int}")]
+        public ActionResult<bool> DeletePlace(int id)
+        {
+            return _placeService.Delete(id);
+        }
     }
 }

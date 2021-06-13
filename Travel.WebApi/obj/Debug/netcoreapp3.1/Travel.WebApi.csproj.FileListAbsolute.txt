@@ -131,3 +131,4 @@ D:\DEV\TravelWeb\Travel.WebApi\obj\Debug\netcoreapp3.1\Travel.WebApi.csproj.Copy
 D:\DEV\TravelWeb\Travel.WebApi\obj\Debug\netcoreapp3.1\Travel.WebApi.dll
 D:\DEV\TravelWeb\Travel.WebApi\obj\Debug\netcoreapp3.1\Travel.WebApi.pdb
 D:\DEV\TravelWeb\Travel.WebApi\obj\Debug\netcoreapp3.1\Travel.WebApi.genruntimeconfig.cache
+D:\DEV\TravelWeb\Travel.WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
